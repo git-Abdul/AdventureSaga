@@ -4,3 +4,23 @@ characters = [
     {"name": "Knight", "health": 150, "attack": 12, "emoji": "⚔️", "description": "The Knight is a chivalrous and stalwart protector of the realm,\nclad in armor and armed with a mighty sword. With a robust health\npool of 150 and a balanced attack of 12, they are the epitome of\nbravery and honor. Knights charge into battle fearlessly, defending\nthe innocent and upholding justice. Their unwavering loyalty and\ncourage make them the frontline defenders of their party."},
     {"name": "Rogue", "health": 90, "attack": 15, "emoji": "🗡️", "description": "The Rogue is a cunning and agile adventurer, specializing in stealth\nand precision. With 90 health points and a swift attack of 15, they\nexcel in subterfuge and surprise attacks. Rogues are experts in the\nart of evasion and surprise, making them adept at sneaking past\nobstacles and ambushing their foes. Their quick thinking and sharp\ninstincts make them essential for covert missions and intricate heists."}
 ]
+
+room_objects = [
+    {
+        'name': 'Sword',
+        'desc': 'A sharp and sturdy sword.',
+        'attack': 2,
+        'interaction': 'You picked up the sword. Your attack has increased.'
+    },
+    {
+        'name': 'Lantern',
+        'desc': 'A lit lantern to light your way.',
+        'interaction': 'You lit the lantern. It illuminates your surroundings.'
+    },
+    {
+        'name': 'Exit',
+        'desc': 'An exit to leave the room.',
+        'interaction': 'You exit the room.'
+    }
+]
+
