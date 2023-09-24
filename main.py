@@ -165,7 +165,7 @@ while not character_selected:
         if choice == "1":
             char_select()
         elif choice == "2":
-            print_colored("This is the Adventure Saga game.\n", INFO_COLOR)
+            print_colored("An ASCII art game made using Python that can be played in the terminal itself. \n", INFO_COLOR)
         elif choice == "3":
             print_colored("Runez Version Alpha 0.1\n", INFO_COLOR)
         else:
