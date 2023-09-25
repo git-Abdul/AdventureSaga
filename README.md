@@ -1,4 +1,4 @@
-## Runez
+## Runez - A game for the terminal.
 <hr>
 <img src="./assets/thumbnails.png">
 <hr>
