@@ -31,15 +31,15 @@ room_objects = [
 
 paths = [
     {
-        "name": "1",
-        "desc": "1"
+        "name": "Forest Path",
+        "desc": "A narrow path leading into a dark forest."
     },
     {
-        "name": "2",
-        "desc": "2"
+        "name": "Cave Entrance",
+        "desc": "A rocky path that leads to the entrance of a mysterious cave."
     },
     {
-        "name": "3",
-        "desc": "3"
+        "name": "Mountain Trail",
+        "desc": "A steep and winding path that leads up into the mountains."
     }
 ]

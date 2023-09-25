@@ -9,7 +9,7 @@ chosen_char = None  # Select a character
 character_selected = False  # Is any character selected
 selected_object = None  # Any object selected for the menu
 exit_obj1 = False  # Exit function
-exit_obj2 = True # Exit function 2
+exit_obj2 = None # Exit function 2
 sword_taken = False  # Is the sword interacted with?
 path = None # What path selected?
 
@@ -76,6 +76,7 @@ def start_game():
         print(f"{idx + 1}. {INFO_COLOR}Object name:{RESET_COLOR} {obj['name']}; {INFO_COLOR}Object description:{RESET_COLOR} {obj['desc']}\n")
 
     while exit_obj1 is False:
+        global exit_obj2
         choice = input(f"{PROMPT_COLOR}Enter object number to interact with: {RESET_COLOR}")
         if not choice:
             continue
@@ -114,6 +115,8 @@ def start_game():
                         print_colored("\nAvailable Paths:\n\n", INFO_COLOR)
                         for idx, obj in enumerate(paths):
                             print(f"{idx + 1}. {INFO_COLOR}Path name:{RESET_COLOR} {obj['name']}; {INFO_COLOR}Path description:{RESET_COLOR} {obj['desc']}\n")
+                        
+                        global exit_obj2
                         exit_obj2 = False
                         exit_obj1 = True
                 else:
@@ -130,19 +133,20 @@ def start_game():
                 choice = int(choice)
                 if 1 <= choice <= len(paths):
                     path = paths[choice - 1]
-                    if path['name'] == "1":
-                        print(1)
+                    if path['name'] == "Forest Path":
+                        print("You embark on a daring journey into the heart of the dark forest. The trees loom overhead, and mysterious sounds surround you.")
                         exit_obj2 = True
-                    elif path['name'] == "2":
-                        print(2)
+                    elif path['name'] == "Cave Entrance":
+                        print("You venture into the cave, and the entrance disappears behind you. The darkness is absolute, and the cave walls seem to whisper secrets.")
                         exit_obj2 = True
-                    elif path['name'] == "3":
-                        print(3)
+                    elif path['name'] == "Mountain Trail":
+                        print("You approach the entrance of the mountain trail. The path winds steeply upward, and the air becomes thinner. Your adventure to the peaks begins.")
                         exit_obj2 = True
                 else:
                     print_colored("Invalid choice.\n", ERROR_COLOR)
             except ValueError:
                 print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)
+
                 
 
 # Select character function
