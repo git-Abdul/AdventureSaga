@@ -145,9 +145,7 @@ def start_game():
                 else:
                     print_colored("Invalid choice.\n", ERROR_COLOR)
             except ValueError:
-                print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)
-
-                
+                print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)                
 
 # Select character function
 def select_char():
