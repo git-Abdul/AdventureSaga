@@ -9,7 +9,9 @@ chosen_char = None  # Select a character
 character_selected = False  # Is any character selected
 selected_object = None  # Any object selected for the menu
 exit_obj1 = False  # Exit function
+exit_obj2 = True # Exit function 2
 sword_taken = False  # Is the sword interacted with?
+path = None # What path selected?
 
 TITLE_COLOR = Fore.CYAN
 INFO_COLOR = Fore.GREEN
@@ -40,9 +42,11 @@ def start_game():
     global chosen_char
     global selected_object
     global exit_obj1
+    global exit_obj2
     global sword_taken
     global attack_Value
     global health_Value
+    global path
 
     if chosen_char is None:
         print_colored("You need to select a character first.\n", ERROR_COLOR)
@@ -67,7 +71,7 @@ def start_game():
         sleep(0.001)
     print_colored(f"You wake up in your room, here's what you find lying around nearby:", TEXT_COLOR)
 
-    print_colored("\n\nAvailable objects:\n", INFO_COLOR)
+    print_colored("\n\nAvailable objects:\n\n", INFO_COLOR)
     for idx, obj in enumerate(room_objects):
         print(f"{idx + 1}. {INFO_COLOR}Object name:{RESET_COLOR} {obj['name']}; {INFO_COLOR}Object description:{RESET_COLOR} {obj['desc']}\n")
 
@@ -94,10 +98,23 @@ def start_game():
                         print(f"{selected_object['interaction']}")
                     else:
                         print(f"You've already lit the lantern.")
+                elif selected_object['name'] == 'Scroll':
+                    if 'scroll_opened' not in chosen_char:
+                        chosen_char['scroll_opened'] = True
+                        print(f"You have chosen to interact with {selected_object['name']}.")
+                        print(f"{selected_object['interaction']}")
+                    else:
+                        print(f"You've already opened the scroll.")
                 elif selected_object['name'] == 'Exit':
                     if not sword_taken:
                         print_colored("You haven't taken the sword yet!\n", ERROR_COLOR)
                     else:
+                        print_colored("You have left the room.\n\n", INFO_COLOR)
+                        print_colored("Leaving the room, you see three paths, which one would you take?", PROMPT_COLOR)
+                        print_colored("\nAvailable Paths:\n\n", INFO_COLOR)
+                        for idx, obj in enumerate(paths):
+                            print(f"{idx + 1}. {INFO_COLOR}Path name:{RESET_COLOR} {obj['name']}; {INFO_COLOR}Path description:{RESET_COLOR} {obj['desc']}\n")
+                        exit_obj2 = False
                         exit_obj1 = True
                 else:
                     print("You have chosen to exit the room.")
@@ -105,6 +122,28 @@ def start_game():
                 print_colored("Invalid choice.\n", ERROR_COLOR)
         except ValueError:
             print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)
+        
+        #Choosing a path - 1
+        while exit_obj2 is False:
+            choice = input(f"{PROMPT_COLOR}Choose your path by entering the path number: {RESET_COLOR}")
+            try:
+                choice = int(choice)
+                if 1 <= choice <= len(paths):
+                    path = paths[choice - 1]
+                    if path['name'] == "1":
+                        print(1)
+                        exit_obj2 = True
+                    elif path['name'] == "2":
+                        print(2)
+                        exit_obj2 = True
+                    elif path['name'] == "3":
+                        print(3)
+                        exit_obj2 = True
+                else:
+                    print_colored("Invalid choice.\n", ERROR_COLOR)
+            except ValueError:
+                print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)
+                
 
 # Select character function
 def select_char():

@@ -13,6 +13,11 @@ room_objects = [
         'interaction': 'You picked up the sword. Your attack has increased.'
     },
     {
+      'name': 'Scroll',
+      'desc': 'An old scroll that someone left behind...',
+      'interaction': 'You opened the scroll,\nOur village has been raided by the evil, we found you stranded down near the river, unconscious as you were, we brought you here and now it is your time to help us as we did to you...'  
+    },
+    {
         'name': 'Lantern',
         'desc': 'A lit lantern to light your way.',
         'interaction': 'You lit the lantern. It illuminates your surroundings.'
@@ -24,3 +29,17 @@ room_objects = [
     }
 ]
 
+paths = [
+    {
+        "name": "1",
+        "desc": "1"
+    },
+    {
+        "name": "2",
+        "desc": "2"
+    },
+    {
+        "name": "3",
+        "desc": "3"
+    }
+]
