@@ -31,6 +31,7 @@ print()
 
 text = pyfiglet.figlet_format(text="Runez", font="isometric1")
 print_colored(text, TITLE_COLOR)
+print()
 
 # Print title again
 for i in range(len(graphics)):
@@ -133,19 +134,54 @@ def start_game():
                 choice = int(choice)
                 if 1 <= choice <= len(paths):
                     path = paths[choice - 1]
+                    print()
+                    print_colored(path['interaction'], TEXT_COLOR)
+                    print()
                     if path['name'] == "Forest Path":
-                        print("You embark on a daring journey into the heart of the dark forest. The trees loom overhead, and mysterious sounds surround you.")
-                        exit_obj2 = True
+                        forest_path()
                     elif path['name'] == "Cave Entrance":
-                        print("You venture into the cave, and the entrance disappears behind you. The darkness is absolute, and the cave walls seem to whisper secrets.")
-                        exit_obj2 = True
+                        cave_path()
                     elif path['name'] == "Mountain Trail":
-                        print("You approach the entrance of the mountain trail. The path winds steeply upward, and the air becomes thinner. Your adventure to the peaks begins.")
-                        exit_obj2 = True
+                        mountain_path()
+                    exit_obj2 = True
                 else:
                     print_colored("Invalid choice.\n", ERROR_COLOR)
             except ValueError:
-                print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)                
+                print_colored("Invalid input. Please enter a number.\n", ERROR_COLOR)
+                
+def forest_path():
+    for i in range(len(graphics)):
+        print_colored(graphics[i], TITLE_COLOR)
+        sleep(0.02)
+    
+    print(forest)
+    
+    for i in range(len(graphics)):
+        print_colored(graphics[i], TITLE_COLOR)
+        sleep(0.02)
+    print()    
+        
+def cave_path():
+    for i in range(len(graphics)):
+        print_colored(graphics[i], TITLE_COLOR)
+        sleep(0.02)
+    
+    print(cave)
+    
+    for i in range(len(graphics)):
+        print_colored(graphics[i], TITLE_COLOR)
+        sleep(0.02)
+
+def mountain_path():
+    for i in range(len(graphics)):
+        print_colored(graphics[i], TITLE_COLOR)
+        sleep(0.02)
+    
+    print(mountain)
+    
+    for i in range(len(graphics)):
+        print_colored(graphics[i], TITLE_COLOR)
+        sleep(0.02)                
 
 # Select character function
 def select_char():
@@ -208,7 +244,7 @@ while not character_selected:
         elif choice == "2":
             print_colored("An ASCII art game made using Python that can be played in the terminal itself. \n", INFO_COLOR)
         elif choice == "3":
-            print_colored("Runez Version Alpha 0.1\n", INFO_COLOR)
+            print_colored("Runez Version Alpha 0.2\n", INFO_COLOR)
         else:
             print_colored("Invalid choice. Please select a valid option.\n", ERROR_COLOR)
     except ValueError:

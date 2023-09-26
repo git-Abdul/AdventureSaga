@@ -32,14 +32,17 @@ room_objects = [
 paths = [
     {
         "name": "Forest Path",
-        "desc": "A narrow path leading into a dark forest."
+        "desc": "A narrow path leading into a dark forest.",
+        "interaction": "You embark on a daring journey into the heart of the dark forest. The trees loom overhead, and mysterious sounds surround you."
     },
     {
         "name": "Cave Entrance",
-        "desc": "A rocky path that leads to the entrance of a mysterious cave."
+        "desc": "A rocky path that leads to the entrance of a mysterious cave.",
+        "interaction": "You venture into the cave, and the entrance disappears behind you. The darkness is absolute, and the cave walls seem to whisper secrets."
     },
     {
         "name": "Mountain Trail",
-        "desc": "A steep and winding path that leads up into the mountains."
+        "desc": "A steep and winding path that leads up into the mountains.",
+        "interaction": "You approach the entrance of the mountain trail. The path winds steeply upward, and the air becomes thinner. Your adventure to the peaks begins."
     }
 ]
