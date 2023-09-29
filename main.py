@@ -6,12 +6,13 @@ from colorama import Fore, Style
 
 selected_character = None  # Select character menu
 chosen_char = None  # Select a character
-character_selected = False  # Is any character selected
-selected_object = None  # Any object selected for the menu
-exit_obj1 = False  # Exit function
-exit_obj2 = None # Exit function 2
-sword_taken = False  # Is the sword interacted with?
-path = None # What path selected?
+character_selected = False  #? Is any character selected
+selected_object = None  #? Any object selected for the menu
+exit_obj1 = False  #! Exit function
+exit_obj2 = None #! Exit function 2
+sword_taken = False  #? Is the sword interacted with?
+path = None #? What path selected?
+snake_dead = False #? Is the snake dead?
 
 TITLE_COLOR = Fore.CYAN
 INFO_COLOR = Fore.GREEN
@@ -159,8 +160,19 @@ def forest_path():
     for i in range(len(graphics)):
         print_colored(graphics[i], TITLE_COLOR)
         sleep(0.02)
-    print()    
-        
+    print()
+    
+    print_colored("A map to the relic's possible location:\nForest Path -> An abandoned hut -> Sleepy swamps -> The relic location\n\n", PROMPT_COLOR)
+    print_colored("On the way to the abandoned hut, you meet a snake 🐍:\n\n", ERROR_COLOR)    
+    print(snake, "\n")
+    print(f"Enemy name: {snake[0]['name']}; Enemy health: {snake[0]['attack']}; Enemy health: {snake[0]['health']}")
+    
+    while snake_dead is False:
+        try:
+            pass
+        except ValueError:
+            pass
+
 def cave_path():
     for i in range(len(graphics)):
         print_colored(graphics[i], TITLE_COLOR)
